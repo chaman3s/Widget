@@ -1,0 +1,36 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="styleSheet" href="index.css">
+    <title>Document</title>
+</head>
+<body>
+    <div class="container">
+  <button class="prev">&#10094;</button>
+  <div class="slides" id="slides">
+    <div class="slide" style="background-image: url('https://images.pexels.com/photos/56866/garden-rose-red-pink-56866.jpeg');"></div>
+    <div class="slide" style="background-image: url('https://images.contentstack.io/v3/assets/bltcedd8dbd5891265b/blt134818d279038650/6668df6434f6fb5cd48aac34/beautiful-flowers-rose.jpeg?q=70&width=1920&auto=webp');"></div>
+    <div class="slide" style="background-image: url('https://media.istockphoto.com/id/1645602428/photo/perfect-light-purple-and-pink-dahlia-enlarged-isolated-on-white-background.jpg?s=612x612&w=0&k=20&c=ABKNUR2jF5EYk8Kdrkc2fumcO3LS5nuhbWoQmbHW3Bo=');"></div>
+  </div>
+  <button class="next">&#10095;</button>
+</div>
+<script>
+  const slides = document.getElementById('slides');
+  const totalSlides = slides.children.length;
+  let index = 0;
+  document.querySelector('.next').addEventListener('click', () => {
+    index = (index + 1) % totalSlides;
+    slides.style.transform = `translateX(-${index * 100}%)`;
+  });
+  document.querySelector('.prev').addEventListener('click', () => {
+    index = (index - 1 + totalSlides) % totalSlides;
+    slides.style.transform = `translateX(-${index * 100}%)`;
+  });
+
+
+</script>
+</body>
+</html>
